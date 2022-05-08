@@ -1,0 +1,83 @@
+﻿<Window x:Class="WpfComAp.MainWindow" Name="okno"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfComAp"
+        mc:Ignorable="d" Height="550" Width="1050" Title="CAN Vizualizer" Background="#FF292946" MinWidth="900" MinHeight="550" Icon="C:\Users\GHOST\Documents\Github\WpfComAp\icon1.ico" MaxHeight="560">
+    <StackPanel>
+        <WrapPanel Orientation="Horizontal">
+
+            <StackPanel HorizontalAlignment="Center" DockPanel.Dock="Top" Width="161" Margin="20,20,0,0">
+
+                <Label Content="Menu" FontSize="10" FontFamily="Lucida Console" Foreground="White"/>
+
+                <Button x:Name="btnOpenFile" Click="btnOpenFile_Click" Foreground="White" Background="#FF34346A" Height="30" FontWeight="Normal" FontFamily="Lucida Console" UseLayoutRounding="False" Content="Vybrať súbor" BorderBrush="White" Margin="0,0,0,5">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="8"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button x:Name="btnConvert" Foreground="White" Click="btnConvert_Click" Visibility="Hidden" Height="30" FontFamily="Lucida Console" Background="#34346a" Content="Konvertovať" BorderBrush="White" Margin="0,0,0,5">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="8"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button x:Name="btnDisplayData" Foreground="White" Click="btnDisplayData_Click" Visibility="Hidden" Height="30" FontFamily="Lucida Console" Background="#34346a" Content="Zobraziť dáta" BorderBrush="White">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="8"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
+            </StackPanel>
+
+            <StackPanel x:Name="CanIDs" Width="254" Height="217" RenderTransformOrigin="0.5,0.5" Margin="0,20,0,0" Visibility="Hidden">
+                <StackPanel.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.392"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </StackPanel.RenderTransform>
+                <Label Content="CAN ID" FontSize="10" Foreground="White" Padding="5,5,5,5" Margin="17,0,0,0" FontFamily="Lucida Console"/>
+                <ListBox x:Name="listBoxZone" ItemsSource="{Binding selectableIds}"
+ Height="191" Background="#FF34346A" Width="238" BorderBrush="White">
+                    <ListBox.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="8"/>
+                        </Style>
+                    </ListBox.Resources>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <CheckBox x:Name="CheckBoxZone" Content="{Binding TheText}"
+     Tag="{Binding TheValue}" Checked="CheckBoxZone_Change"   Unchecked="CheckBoxZone_Change"
+     Margin="0,5,0,0" Foreground="White"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+            <Border x:Name="Brdr1" BorderBrush="White" BorderThickness="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,40,0,0" Visibility="Visible" CornerRadius="8,8,8,8">
+                <TextBlock TextWrapping="Wrap" x:Name="frameDetail" Text="" FontWeight="Normal" Padding="5,0,0,0" Foreground="White" Margin="0,0,5,0" MaxWidth="300"/>
+            </Border>
+            <StackPanel x:Name="MierkaPanel" Visibility="Visible" Width="128">
+                <Label Content="Mierka" Background="{x:Null}" Foreground="White" FontSize="10" FontFamily="Lucida Console" Margin="10,20,0,0"/>
+                <Border x:Name="BorderSlider" BorderThickness="1" BorderBrush="White" Height="35" Background="#FF34346A" CornerRadius="8,8,8,8" Visibility="Visible" Margin="10,0,0,0">
+                    <Slider Width="100" Minimum="0.1" Maximum="100" x:Name="zoomSlider" Value="50" TickFrequency="0.1" IsSnapToTickEnabled="True" Foreground="White" Background="{x:Null}" Margin="0,7,0,0" Cursor="Hand"/>
+                </Border>
+            </StackPanel>
+            <Label x:Name="MierkaLabel" Content="Mierka:" Foreground="White" Padding="5,0,5,5" FontFamily="Segoe UI" Visibility="Visible" Margin="10,50,0,0"/>
+            <Label x:Name="MierkaValue" Content="{Binding Value, ElementName=zoomSlider, UpdateSourceTrigger=PropertyChanged}" MaxWidth="31" Foreground="White" Padding="0,0,2,5" Width="34" FontFamily="Segoe UI" Visibility="Visible" Margin="0,50,0,0"/>
+            <Label x:Name="MierkaJedn" Content="μs/px" Padding="0,0,5,5" Foreground="White" FontFamily="Segoe UI" Visibility="Visible" Margin="0,50,0,0"/>
+        </WrapPanel>
+        <Label x:Name="VizualizDatLabel" Content="Vizualizácia dát" Foreground="White" Margin="22,30,0,0" FontSize="10" Visibility="Hidden"/>
+        <ScrollViewer HorizontalScrollBarVisibility="Visible" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.VirtualizationMode="Standard" x:Name="scrollViewer1" Height="200"  Margin="0,5,0,0" Visibility="Hidden">
+            <StackPanel Width="{Binding timelineWidth}" x:Name="timelineContainer" VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.VirtualizationMode="Standard"/>
+        </ScrollViewer>
+    </StackPanel>
+</Window>
