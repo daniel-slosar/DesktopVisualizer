@@ -17,9 +17,14 @@ Desktop Visualizer is meant to graphically display logged CAN data that are stor
 ---
 Thanks to direct access to the system files, when converting to a VCD file, it is possible to process a file of bigger size, because we can directly write data to the file, it does not have to be stored in the operating memory, and thus its volume is not limited by the size of the RAM.
 
-</br>
 
-## 📝License
+## 🌐PWA
+We also created Progressive Web Application that can be used for smaller CSV file sizes.
+Advantage of using PWA is that you can use this application on any device.
+
+[PWA Website](https://canvizualizacia.000webhostapp.com)
+
+## 📝Documentation
 
 This repository was created for our school project in cooperation with ComAp s.r.o.<br>
 Our technical documentation to this project can be read [HERE](https://github.com/daniel-slosar/DesktopVisualizer/tree/master/Technical%20Documentation/TechDocumentation.pdf).
