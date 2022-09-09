@@ -1,0 +1,5 @@
+C:\Users\GHOST\Documents\GitHub\WpfComAp\bin\Release\net6.0-windows\publish\WpfComAp.exe
+C:\Users\GHOST\Documents\GitHub\WpfComAp\bin\Release\net6.0-windows\publish\WpfComAp.dll
+C:\Users\GHOST\Documents\GitHub\WpfComAp\bin\Release\net6.0-windows\publish\WpfComAp.deps.json
+C:\Users\GHOST\Documents\GitHub\WpfComAp\bin\Release\net6.0-windows\publish\WpfComAp.runtimeconfig.json
+C:\Users\GHOST\Documents\GitHub\WpfComAp\bin\Release\net6.0-windows\publish\WpfComAp.pdb
