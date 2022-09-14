@@ -7,7 +7,9 @@
 
 
 ![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white&color=blue)
- [![Only 32 Kb](https://img.shields.io/badge/size-3.2%20MB-blue.svg?style=for-the-badge)](https://github.com/Naereen/StrapDown.js/blob/master/strapdown.min.js)
+![Razor](https://img.shields.io/badge/Razor%20Pages-FFFF00?style=for-the-badge)
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+[![Only 32 Kb](https://img.shields.io/badge/size-3.2%20MB-blue.svg?style=for-the-badge)](https://github.com/Naereen/StrapDown.js/blob/master/strapdown.min.js)
 
 
 
@@ -27,6 +29,7 @@ Advantage of using PWA is that you can use this application on any device.
 ## 📝Documentation
 
 This repository was created for our school project in cooperation with ComAp s.r.o.<br>
+<b>I contributed to the development of this application.</b><br> 
 Our technical documentation to this project can be read [HERE](https://github.com/daniel-slosar/DesktopVisualizer/tree/master/Technical%20Documentation/TechDocumentation.pdf).
 
 
